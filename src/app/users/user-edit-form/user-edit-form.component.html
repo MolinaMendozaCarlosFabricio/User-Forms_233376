@@ -1,0 +1,22 @@
+<main>
+    <h3>Editar usuario</h3>
+
+    <p>{{userToEdit.id}}</p>
+    
+    <label>Username</label>
+    <input type="text" placeholder="Username" [(ngModel)]="userToEdit.username">
+
+    <label>email</label>
+    <input type="email" placeholder="email" [(ngModel)]="userToEdit.email">
+
+    <label>Contraseña</label>
+    <input type="text" placeholder="Contraseña" [(ngModel)]="userToEdit.pwd">
+
+    <label>Tipo de usuario</label>
+    <select [(ngModel)]="userToEdit.rol">
+        <option value="common">Común</option>
+        <option value="admin">Administrador</option>
+    </select>
+
+    <button (click)="sendingIdUser()">Delete</button>
+</main>

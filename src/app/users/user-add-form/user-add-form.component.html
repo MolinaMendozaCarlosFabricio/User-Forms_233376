@@ -1,0 +1,20 @@
+<main>
+    <h3>Registrar usuario</h3>
+    
+    <label>Username</label>
+    <input type="text" placeholder="Username" [(ngModel)]="newUser.username">
+
+    <label>email</label>
+    <input type="email" placeholder="email" [(ngModel)]="newUser.email">
+
+    <label>Contraseña</label>
+    <input type="text" placeholder="Contraseña" [(ngModel)]="newUser.pwd">
+
+    <label>Tipo de usuario</label>
+    <select [(ngModel)]="newUser.rol">
+        <option value="common">Común</option>
+        <option value="admin">Administrador</option>
+    </select>
+
+    <button (click)="addUser()">Registrar</button>
+</main>
