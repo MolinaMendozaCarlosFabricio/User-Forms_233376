@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { UserEntity } from '../interfaces/user-entity';
 
 @Component({
   selector: 'app-user-item',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './user-item.component.css'
 })
 export class UserItemComponent {
-
+  @Input() objUser: UserEntity = {
+    id: 0,
+    username: "",
+    email: "",
+    pwd: "",
+    rol: ""
+  }
 }

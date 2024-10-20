@@ -1,14 +1,13 @@
-<p>users-view works!</p>
-<div class="user_forms-content">
+<div class="user_forms-content" *ngIf="isAdmin">
     <button>Registrar usuario</button>
-    <button>Editar usuario</button>
     <div>
-        <app-user-add-form></app-user-add-form>
-        <button>Cerrar</button>
-    </div>
-    <div>
-        <app-user-edit-form></app-user-edit-form>
+        <app-user-add-form (addThisUser)="receibeNewUser($event)" [lenghtUsers]="listUsers.length"></app-user-add-form>
         <button>Cerrar</button>
     </div>
 </div>
-<div class="user_dashboard"></div>
+<div class="user_dashboard-for-common-users" *ngIf="!isAdmin">
+    <app-user-item *ngFor="let user of listUsers" [objUser]="user"></app-user-item>
+</div>
+<div class="user_dashboard-for-admin-users" *ngIf="isAdmin">
+    <app-user-edit-form *ngFor="let user of listUsers" [userToEdit]="user" (sendThisUserToDelete)="deleteThisUser($event)"></app-user-edit-form>
+</div>
